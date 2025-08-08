@@ -10,7 +10,7 @@ public Card(String title,String img,Integer day){
     this.dayOfWeek = day;
 }
 public String getInformation(){
-    String info = " "+ this.imgSource + "  \n" + this.title + "  \n" + " Se estrena el dia " + this.dayOfWeek.toString();
+    String info = "  "+ this.imgSource + "  \n " + this.title + "  \n " + " Se estrena el dia " + this.dayOfWeek.toString();
     return info;
 }
 public void setTitle(String title){
