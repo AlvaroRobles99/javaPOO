@@ -15,11 +15,17 @@ public class Persona {
     private String nombre ;
     private String apellido ;
     private LocalDate fechaNacimiento;
+    private String sexo;
+    private Boolean trabaja;
+    private Boolean estudia;
 
-public Persona(String nombre , String apellido,LocalDate fecha){
+public Persona(String nombre , String apellido,LocalDate fecha, String sexo,Boolean trabaja, Boolean estudia){
     this.apellido= apellido;
     this.nombre= nombre;
     this.fechaNacimiento = fecha;
+    this.sexo = sexo;
+    this.trabaja = trabaja;
+    this.estudia = estudia;
 }
 
     public String getApellido() {
@@ -31,6 +37,15 @@ public Persona(String nombre , String apellido,LocalDate fecha){
     public String getNombre() {
         return nombre;
     }
+    public String getSexo() {
+    return sexo;
+}
+public Boolean getEstudia() {
+    return estudia;
+}
+public Boolean getTrabaja() {
+    return trabaja;
+}
 
 public void setApellido(String apellido) {
     this.apellido = apellido;
@@ -41,6 +56,17 @@ public void setFechaNacimiento(LocalDate fechaNacimiento) {
 public void setNombre(String nombre) {
     this.nombre = nombre;
 }
+
+public void setSexo(String sexo) {
+    this.sexo = sexo;
+}
+public void setTrabaja(Boolean trabaja) {
+    this.trabaja = trabaja;
+}
+public void setEstudia(Boolean estudia) {
+    this.estudia = estudia;
+}
+
 public Integer calcularEdad(){
     LocalDate hoy = LocalDate.now();
      Period periodo = Period.between(this.fechaNacimiento, hoy);
@@ -49,7 +75,11 @@ public Integer calcularEdad(){
 }
 @Override
 public String toString(){
-    return "El nombre completo es : " + nombre + " "  + " " + apellido + "\n" + "Edad :  " + calcularEdad();
+    return "El nombre completo es : " + nombre + " "  + " " + apellido + 
+  "\n" + " Edad :  "  + calcularEdad() +
+  "\n Sexo :"+ sexo + 
+ "\n trabaja :" + trabaja +
+    "\n estudia : " + estudia ;
 }
 
 }
