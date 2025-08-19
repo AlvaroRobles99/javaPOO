@@ -2,28 +2,39 @@ import java.util.ArrayList;
 
 public class Censo {
     private String nombreCenso;
-    private Integer cantFamilias;
-    private Integer cantPersonas;
-    private ArrayList<Familia> censo= new ArrayList<>();
-    private Integer promedioEdad;
+    private ArrayList<Familia> censo = new ArrayList<>();
 
-    public Censo(String nombre){
- this.nombreCenso = nombre;
-
+    public Censo(String nombre) {
+        this.nombreCenso = nombre;
     }
+
     public String getNombreCenso() {
         return nombreCenso;
     }
+
     public void setNombreCenso(String nombreCenso) {
         this.nombreCenso = nombreCenso;
     }
-    public Integer getCantFamilias() {
-        return cantFamilias;
+
+    public Integer calcularFamilias() {
+        return censo.size();
     }
-    public Integer getCantPersonas() {
-        return cantPersonas;
+
+    public Integer calcularPersonas() {
+        Integer cant = 0;
+        for (Familia familia : censo) {
+            cant += familia.getCantMiembros();
+        }
+        return cant;
     }
-    public Integer getPromedioEdad() {
-        return promedioEdad;
+
+    public Double getPromedioCenso() {
+        Double acumulador = 0.0;
+        Integer cant = censo.size();
+        for (Familia familia : censo) {
+            acumulador += familia.getPromedioFamilia();
+        }
+        Double promedioCenso = acumulador / cant;
+        return promedioCenso;
     }
 }
