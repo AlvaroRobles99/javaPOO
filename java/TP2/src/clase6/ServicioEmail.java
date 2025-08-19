@@ -1,7 +1,5 @@
 package clase6;
 
-import java.text.ListFormat.Style;
-
 public class ServicioEmail implements INotificable {
 
 

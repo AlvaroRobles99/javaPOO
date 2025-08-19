@@ -6,7 +6,7 @@ public class SistemaNotificaciones {
      
     // TODO 6: Declare un atributo de tipo Set para almacenar los servicios.
     // Utilice la interfaz INotificable como tipo genérico del Set.
-   Set<INotificable> setSistema;
+   private Set<INotificable> setSistema;
     public SistemaNotificaciones() {
         // TODO 7: En el constructor, inicialice el Set de servicios
         // usando una implementación concreta como HashSet.
